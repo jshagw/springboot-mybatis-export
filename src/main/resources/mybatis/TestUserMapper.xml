@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mybatis.mapper.TestUserMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.mybatis.model.TestUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="L1" jdbcType="SMALLINT" property="l1" />
+    <result column="L2" jdbcType="INTEGER" property="l2" />
+    <result column="L3" jdbcType="INTEGER" property="l3" />
+    <result column="L4" jdbcType="INTEGER" property="l4" />
+    <result column="L5" jdbcType="BIGINT" property="l5" />
+    <result column="L55" jdbcType="BIGINT" property="l55" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, L1, L2, L3, L4, L5, L55
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.mybatis.model.TestUser">
+    insert into test (id, L1, L2, 
+      L3, L4, L5, L55
+      )
+    values (#{id,jdbcType=INTEGER}, #{l1,jdbcType=SMALLINT}, #{l2,jdbcType=INTEGER}, 
+      #{l3,jdbcType=INTEGER}, #{l4,jdbcType=INTEGER}, #{l5,jdbcType=BIGINT}, #{l55,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.mybatis.model.TestUser">
+    insert into test
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="l1 != null">
+        L1,
+      </if>
+      <if test="l2 != null">
+        L2,
+      </if>
+      <if test="l3 != null">
+        L3,
+      </if>
+      <if test="l4 != null">
+        L4,
+      </if>
+      <if test="l5 != null">
+        L5,
+      </if>
+      <if test="l55 != null">
+        L55,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="l1 != null">
+        #{l1,jdbcType=SMALLINT},
+      </if>
+      <if test="l2 != null">
+        #{l2,jdbcType=INTEGER},
+      </if>
+      <if test="l3 != null">
+        #{l3,jdbcType=INTEGER},
+      </if>
+      <if test="l4 != null">
+        #{l4,jdbcType=INTEGER},
+      </if>
+      <if test="l5 != null">
+        #{l5,jdbcType=BIGINT},
+      </if>
+      <if test="l55 != null">
+        #{l55,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.mybatis.model.TestUser">
+    update test
+    <set>
+      <if test="l1 != null">
+        L1 = #{l1,jdbcType=SMALLINT},
+      </if>
+      <if test="l2 != null">
+        L2 = #{l2,jdbcType=INTEGER},
+      </if>
+      <if test="l3 != null">
+        L3 = #{l3,jdbcType=INTEGER},
+      </if>
+      <if test="l4 != null">
+        L4 = #{l4,jdbcType=INTEGER},
+      </if>
+      <if test="l5 != null">
+        L5 = #{l5,jdbcType=BIGINT},
+      </if>
+      <if test="l55 != null">
+        L55 = #{l55,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.mybatis.model.TestUser">
+    update test
+    set L1 = #{l1,jdbcType=SMALLINT},
+      L2 = #{l2,jdbcType=INTEGER},
+      L3 = #{l3,jdbcType=INTEGER},
+      L4 = #{l4,jdbcType=INTEGER},
+      L5 = #{l5,jdbcType=BIGINT},
+      L55 = #{l55,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

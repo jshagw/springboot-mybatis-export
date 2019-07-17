@@ -1,0 +1,8 @@
+echarts:
+  path: I:\gaowei\phantomjs-2.1.1-windows\echarts-convert\echarts-convert1.js
+
+phantomjs:
+  path: I:\gaowei\phantomjs-2.1.1-windows\phantomjs-2.1.1-windows\bin\phantomjs.exe
+
+output:
+  path: H:\temp\Echarts
