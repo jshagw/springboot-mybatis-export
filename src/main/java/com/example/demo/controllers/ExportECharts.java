@@ -8,18 +8,14 @@ import com.github.abel533.echarts.code.Trigger;
 import com.github.abel533.echarts.json.GsonOption;
 import com.github.abel533.echarts.series.Line;
 import com.google.gson.Gson;
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.executor.ReuseExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.util.resources.cldr.lu.CurrencyNames_lu;
 
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
 import java.io.*;
 import java.net.URLEncoder;
 import java.util.UUID;
