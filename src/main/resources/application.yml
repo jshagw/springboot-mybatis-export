@@ -40,3 +40,9 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml
   #指定model路径
   type-aliases-package: com.example.demo.mybatis.model
+
+
+jodconverter:
+  local:
+    enabled: true
+    office-home: C:\\Program Files (x86)\\OpenOffice 4
